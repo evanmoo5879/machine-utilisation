@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,88 +18,89 @@
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; min-height: 100vh; padding-bottom: 40px; }
 
-  .header { background: var(--surface); border-bottom: 2px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--accent); }
-  .header-sub { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 2px; }
-  .clock { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted); text-align: right; }
+.header { background: var(–surface); border-bottom: 2px solid var(–border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.header-title { font-family: ‘Bebas Neue’, sans-serif; font-size: 22px; letter-spacing: 2px; color: var(–accent); }
+.header-sub { font-family: ‘IBM Plex Mono’, monospace; font-size: 10px; color: var(–muted); margin-top: 2px; }
+.clock { font-family: ‘IBM Plex Mono’, monospace; font-size: 13px; color: var(–muted); text-align: right; }
 
-  .step { display: none; padding: 20px; }
-  .step.active { display: block; }
-  .step-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-  .step-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 4px; }
-  .step-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.step { display: none; padding: 20px; }
+.step.active { display: block; }
+.step-label { font-family: ‘IBM Plex Mono’, monospace; font-size: 10px; color: var(–muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+.step-title { font-family: ‘Bebas Neue’, sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 4px; }
+.step-sub { font-size: 13px; color: var(–muted); margin-bottom: 20px; }
 
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
 
-  .btn-card { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 10px; padding: 18px 12px; text-align: center; cursor: pointer; transition: all 0.15s; user-select: none; }
-  .btn-card:active { transform: scale(0.96); }
-  .btn-card .icon { font-size: 26px; margin-bottom: 8px; }
-  .btn-card .label { font-weight: 700; font-size: 14px; }
-  .btn-card .label-cn { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.btn-card { background: var(–surface2); border: 1.5px solid var(–border); border-radius: 10px; padding: 18px 12px; text-align: center; cursor: pointer; transition: all 0.15s; user-select: none; }
+.btn-card:active { transform: scale(0.96); }
+.btn-card .icon { font-size: 26px; margin-bottom: 8px; }
+.btn-card .label { font-weight: 700; font-size: 14px; }
+.btn-card .label-cn { font-size: 11px; color: var(–muted); margin-top: 3px; }
 
-  .btn-status { border-radius: 10px; padding: 22px 16px; text-align: center; cursor: pointer; transition: all 0.15s; user-select: none; border: 2px solid transparent; }
-  .btn-status:active { transform: scale(0.96); }
-  .btn-status .icon { font-size: 32px; margin-bottom: 8px; }
-  .btn-status .label { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; }
-  .btn-status .label-cn { font-size: 12px; margin-top: 4px; opacity: 0.8; }
+.btn-status { border-radius: 10px; padding: 22px 16px; text-align: center; cursor: pointer; transition: all 0.15s; user-select: none; border: 2px solid transparent; }
+.btn-status:active { transform: scale(0.96); }
+.btn-status .icon { font-size: 32px; margin-bottom: 8px; }
+.btn-status .label { font-family: ‘Bebas Neue’, sans-serif; font-size: 20px; letter-spacing: 1px; }
+.btn-status .label-cn { font-size: 12px; margin-top: 4px; opacity: 0.8; }
 
-  .btn-run { background: var(--run-dim); border-color: var(--run); color: var(--run); }
-  .btn-run.selected { background: var(--run); color: #000; }
-  .btn-stop { background: var(--stop-dim); border-color: var(--stop); color: var(--stop); }
-  .btn-stop.selected { background: var(--stop); color: #fff; }
-  .btn-maint { background: var(--maint-dim); border-color: var(--maint); color: var(--maint); }
-  .btn-maint.selected { background: var(--maint); color: #000; }
+.btn-run { background: var(–run-dim); border-color: var(–run); color: var(–run); }
+.btn-run.selected { background: var(–run); color: #000; }
+.btn-stop { background: var(–stop-dim); border-color: var(–stop); color: var(–stop); }
+.btn-stop.selected { background: var(–stop); color: #fff; }
+.btn-maint { background: var(–maint-dim); border-color: var(–maint); color: var(–maint); }
+.btn-maint.selected { background: var(–maint); color: #000; }
 
-  .field-group { margin-bottom: 18px; }
-  .field-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-  .field-input { width: 100%; background: var(--surface2); border: 1.5px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; padding: 14px; outline: none; transition: border-color 0.15s; }
-  .field-input:focus { border-color: var(--accent); }
-  .field-select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
-  .field-input option { background: #1a1a1a; }
+.field-group { margin-bottom: 18px; }
+.field-label { font-family: ‘IBM Plex Mono’, monospace; font-size: 11px; color: var(–muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.field-input { width: 100%; background: var(–surface2); border: 1.5px solid var(–border); border-radius: 8px; color: var(–text); font-family: ‘IBM Plex Sans’, sans-serif; font-size: 15px; padding: 14px; outline: none; transition: border-color 0.15s; }
+.field-input:focus { border-color: var(–accent); }
+.field-select { appearance: none; -webkit-appearance: none; background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath d=‘M1 1l5 5 5-5’ stroke=’%23888’ stroke-width=‘1.5’ fill=‘none’/%3E%3C/svg%3E”); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+.field-input option { background: #1a1a1a; }
 
-  .btn-submit { width: 100%; background: var(--accent); color: #000; border: none; border-radius: 10px; padding: 18px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; cursor: pointer; transition: all 0.15s; margin-top: 8px; }
-  .btn-submit:active { transform: scale(0.98); opacity: 0.9; }
-  .btn-submit:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; }
+.btn-submit { width: 100%; background: var(–accent); color: #000; border: none; border-radius: 10px; padding: 18px; font-family: ‘Bebas Neue’, sans-serif; font-size: 22px; letter-spacing: 2px; cursor: pointer; transition: all 0.15s; margin-top: 8px; }
+.btn-submit:active { transform: scale(0.98); opacity: 0.9; }
+.btn-submit:disabled { background: var(–border); color: var(–muted); cursor: not-allowed; }
 
-  .btn-next { width: 100%; background: var(--surface2); border: 1.5px solid var(--accent); color: var(--accent); border-radius: 10px; padding: 16px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; cursor: pointer; margin-top: 4px; transition: all 0.15s; }
-  .btn-next:active { background: var(--accent); color: #000; }
+.btn-next { width: 100%; background: var(–surface2); border: 1.5px solid var(–accent); color: var(–accent); border-radius: 10px; padding: 16px; font-family: ‘Bebas Neue’, sans-serif; font-size: 20px; letter-spacing: 2px; cursor: pointer; margin-top: 4px; transition: all 0.15s; }
+.btn-next:active { background: var(–accent); color: #000; }
 
-  .btn-back { background: none; border: 1.5px solid var(--border); color: var(--muted); border-radius: 8px; padding: 10px 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 6px; }
+.btn-back { background: none; border: 1.5px solid var(–border); color: var(–muted); border-radius: 8px; padding: 10px 18px; font-family: ‘IBM Plex Mono’, monospace; font-size: 12px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 6px; }
 
-  /* LAST STATUS PANEL */
-  .last-status-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
-  .last-status-header { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--surface2); }
-  .ls-row { display: flex; justify-content: space-between; align-items: center; padding: 11px 14px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; }
-  .ls-row:last-child { border-bottom: none; }
-  .ls-row:active { background: var(--surface2); }
-  .ls-machine { font-weight: 700; font-size: 14px; }
-  .ls-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 3px; }
+/* LAST STATUS PANEL */
+.last-status-panel { background: var(–surface); border: 1px solid var(–border); border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+.last-status-header { font-family: ‘IBM Plex Mono’, monospace; font-size: 10px; color: var(–muted); letter-spacing: 2px; text-transform: uppercase; padding: 10px 14px; border-bottom: 1px solid var(–border); background: var(–surface2); }
+.ls-row { display: flex; justify-content: space-between; align-items: center; padding: 11px 14px; border-bottom: 1px solid var(–border); cursor: pointer; transition: background 0.1s; }
+.ls-row:last-child { border-bottom: none; }
+.ls-row:active { background: var(–surface2); }
+.ls-machine { font-weight: 700; font-size: 14px; }
+.ls-meta { font-family: ‘IBM Plex Mono’, monospace; font-size: 10px; color: var(–muted); margin-top: 3px; }
 
-  .summary-card { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 20px; }
-  .summary-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
-  .summary-row:last-child { border-bottom: none; }
-  .summary-key { font-size: 12px; color: var(--muted); }
-  .summary-val { font-weight: 700; font-size: 14px; }
+.summary-card { background: var(–surface2); border: 1.5px solid var(–border); border-radius: 10px; padding: 16px; margin-bottom: 20px; }
+.summary-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(–border); }
+.summary-row:last-child { border-bottom: none; }
+.summary-key { font-size: 12px; color: var(–muted); }
+.summary-val { font-weight: 700; font-size: 14px; }
 
-  .success-screen { text-align: center; padding: 40px 20px; }
-  .success-icon { font-size: 64px; margin-bottom: 16px; }
-  .success-title { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--run); letter-spacing: 2px; margin-bottom: 8px; }
-  .success-sub { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
+.success-screen { text-align: center; padding: 40px 20px; }
+.success-icon { font-size: 64px; margin-bottom: 16px; }
+.success-title { font-family: ‘Bebas Neue’, sans-serif; font-size: 32px; color: var(–run); letter-spacing: 2px; margin-bottom: 8px; }
+.success-sub { color: var(–muted); font-size: 14px; margin-bottom: 32px; }
 
-  .divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+.divider { border: none; border-top: 1px solid var(–border); margin: 18px 0; }
 
-  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: #ff4444; color: white; padding: 12px 24px; border-radius: 8px; font-size: 13px; z-index: 999; transition: transform 0.3s; white-space: nowrap; }
-  .toast.show { transform: translateX(-50%) translateY(0); }
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: #ff4444; color: white; padding: 12px 24px; border-radius: 8px; font-size: 13px; z-index: 999; transition: transform 0.3s; white-space: nowrap; }
+.toast.show { transform: translateX(-50%) translateY(0); }
 
-  .status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; }
-  .badge-run { background: var(--run-dim); color: var(--run); border: 1px solid var(--run); }
-  .badge-stop { background: var(--stop-dim); color: var(--stop); border: 1px solid var(--stop); }
-  .badge-maint { background: var(--maint-dim); color: var(--maint); border: 1px solid var(--maint); }
-  .badge-none { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; }
+.badge-run { background: var(–run-dim); color: var(–run); border: 1px solid var(–run); }
+.badge-stop { background: var(–stop-dim); color: var(–stop); border: 1px solid var(–stop); }
+.badge-maint { background: var(–maint-dim); color: var(–maint); border: 1px solid var(–maint); }
+.badge-none { background: var(–surface2); color: var(–muted); border: 1px solid var(–border); }
 
-  .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 1px; margin: 10px 0 8px; }
+.section-label { font-family: ‘IBM Plex Mono’, monospace; font-size: 10px; color: var(–muted); letter-spacing: 1px; margin: 10px 0 8px; }
 </style>
+
 </head>
 <body>
 
@@ -111,6 +113,7 @@
 </div>
 
 <!-- STEP 1: OPERATOR -->
+
 <div class="step active" id="step-operator">
   <div class="step-label">Step 1 / 第一步</div>
   <div class="step-title">Who are you? / 你是谁?</div>
@@ -119,6 +122,7 @@
 </div>
 
 <!-- STEP 2: MACHINE -->
+
 <div class="step" id="step-machine">
   <button class="btn-back" onclick="goTo('step-operator')">← Back / 返回</button>
   <div class="step-label">Step 2 / 第二步</div>
@@ -137,6 +141,7 @@
 </div>
 
 <!-- STEP 3: STATUS -->
+
 <div class="step" id="step-status">
   <button class="btn-back" onclick="goTo('step-machine')">← Back / 返回</button>
   <div class="step-label">Step 3 / 第三步</div>
@@ -156,6 +161,7 @@
   </div>
 
   <!-- Running: WO field -->
+
   <div id="running-fields" style="display:none;">
     <hr class="divider">
     <div class="field-group">
@@ -166,6 +172,7 @@
   </div>
 
   <!-- Stopped / Maintenance: reason + WO -->
+
   <div id="extra-fields" style="display:none;">
     <hr class="divider">
     <div class="field-group">
@@ -191,6 +198,7 @@
 </div>
 
 <!-- STEP 4: CONFIRM -->
+
 <div class="step" id="step-confirm">
   <button class="btn-back" onclick="goTo('step-status')">← Back / 返回</button>
   <div class="step-label">Step 4 / 第四步</div>
@@ -201,6 +209,7 @@
 </div>
 
 <!-- SUCCESS -->
+
 <div class="step" id="step-success">
   <div class="success-screen">
     <div class="success-icon">✅</div>
@@ -217,15 +226,15 @@
 <script>
 // ─── CONFIG — EDIT THESE ───────────────────────────────────────────
 const OPERATORS = [
-  "Tey Wei En", "Wang Jian", "Yin Bochuan", "Yao Yuqun",
-  "Tong Xinhui", "Zhang Huilong", "Xue Baoli", "Other"
+  "Tey Wei En", "Yin Bochuan", "Xue Baoli", "Wang Jian",
+  "Tong Xianhui", "Yao Yuqun", "Zhang Huilong", "Other"
 ];
 const MACHINES = [
-  { id: "M01", name: "Machine 01", cn: "机器 01" },
-  { id: "M02", name: "Machine 02", cn: "机器 02" },
-  { id: "M03", name: "Machine 03", cn: "机器 03" },
-  { id: "M04", name: "Machine 04", cn: "机器 04" },
-  { id: "M05", name: "Machine 05", cn: "机器 05" },
+  { id: "360",   name: "Saw 360",   cn: "锯机 360" },
+  { id: "460",   name: "Saw 460",   cn: "锯机 460" },
+  { id: "560",   name: "Saw 560",   cn: "锯机 560" },
+  { id: "530",   name: "Saw 530",   cn: "锯机 530" },
+  { id: "530-1", name: "Saw 530-1", cn: "锯机 530-1" },
 ];
 // ─── SUPABASE CONFIG ───────────────────────────────────────────────
 const SUPABASE_URL = "https://dlcoscgtfyeffcfycami.supabase.co";
@@ -430,5 +439,6 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 </script>
+
 </body>
 </html>
